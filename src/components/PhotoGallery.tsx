@@ -26,6 +26,7 @@ export const PhotoGallery: React.FC = () => {
 
   const categories = [
     { id: "all", label: "All Photos" },
+    { id: "owner", label: "Owner" },
     { id: "storefront", label: "Storefront & Exterior" },
     { id: "interior", label: "Shop Interior" },
     { id: "frames", label: "Frames & Displays" },

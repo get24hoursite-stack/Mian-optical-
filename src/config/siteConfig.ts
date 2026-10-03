@@ -11,13 +11,14 @@ import counterFramesImg from "../assets/images/file_00000000a7c082109796e205f9e8
 import contactLensCareImg from "../assets/images/file_00000000a5bc8210bdb222169dfb7164.png";
 import shopInteriorPortraitImg from "../assets/images/file_00000000292c8210a83d42ca00d97b5f.png";
 import shopInteriorWideImg from "../assets/images/file_000000006ab882109a44c55f2b2aa29b.png";
+import ownerImg from "../assets/images/owner.png";
 
 export interface PhotoAsset {
   id: string;
   url: string;
   title: string;
   caption?: string;
-  category: 'storefront' | 'testing' | 'frames' | 'care' | 'interior';
+  category: 'storefront' | 'testing' | 'frames' | 'care' | 'interior' | 'owner';
   aspect?: 'landscape' | 'portrait';
 }
 
@@ -39,6 +40,7 @@ export interface SiteConfig {
     openingHours: string;
   };
   photos: {
+    owner: string;
     storefront: string;
     eyeTesting: string;
     brandWallDisplay: string;
@@ -71,6 +73,7 @@ export const siteConfig: SiteConfig = {
     openingHours: "",
   },
   photos: {
+    owner: ownerImg,
     storefront: storefrontImg,
     eyeTesting: eyeTestingImg,
     brandWallDisplay: brandWallDisplayImg,
@@ -80,6 +83,14 @@ export const siteConfig: SiteConfig = {
     shopInteriorPortrait: shopInteriorPortraitImg,
     shopInteriorWide: shopInteriorWideImg,
     galleryImages: [
+      {
+        id: "gal-owner",
+        url: ownerImg,
+        title: "Owner & Optical Specialist",
+        caption: "Owner of Mian Optical personally attending to customer eyesight testing and custom frame adjustments.",
+        category: "owner",
+        aspect: "portrait",
+      },
       {
         id: "gal-storefront",
         url: storefrontImg,

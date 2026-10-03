@@ -35,8 +35,8 @@ export const WhatsAppAppIcon: React.FC<{ className?: string; size?: number }> = 
 );
 
 /**
- * Floating WhatsApp Icon - EXACTLY like the official WhatsApp app icon!
- * Pure green squircle launcher with white phone speech bubble, NO text, fixed at bottom-right.
+ * Floating WhatsApp Button with official WhatsApp icon & "Chat on WhatsApp" text label!
+ * Fixed at bottom-right corner with direct link to WhatsApp chat.
  */
 export const FloatingWhatsApp: React.FC = () => {
   const whatsappUrl =
@@ -47,14 +47,19 @@ export const FloatingWhatsApp: React.FC = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="WhatsApp +92 323 6534461"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-[22%] shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 border-2 border-white focus:outline-hidden focus:ring-4 focus:ring-emerald-400/50"
+      aria-label="Chat on WhatsApp +92 323 6534461"
+      className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-white focus:outline-hidden focus:ring-4 focus:ring-emerald-400/50 group"
     >
-      <WhatsAppIcon className="w-8 h-8 sm:w-9 sm:h-9 text-white" />
-      {/* Subtle live indicator dot */}
-      <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75" />
-        <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-white" />
+      <div className="relative flex items-center justify-center">
+        <WhatsAppIcon className="w-6 h-6 text-white shrink-0" />
+        {/* Subtle live indicator dot */}
+        <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-75" />
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
+        </span>
+      </div>
+      <span className="text-xs sm:text-sm font-bold tracking-wide pr-1 select-none">
+        Chat on WhatsApp
       </span>
     </a>
   );
